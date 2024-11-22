@@ -2,20 +2,31 @@
 
 _No mordemos, sólo nos quemamos con los soldadores_
 
+Los componentes pueden ser 
+
 ## Componentes (Idea)
 
 - Arduino UNO c/ESP32
-- Portapilas _¿cuántos voltios?_
 - Un servomotor de 180º para la torreta
-- Una cámara para la torreta
-- 4 motores
-- 4 ruedas omnidireccionales (imprimir)
-- Display 7 segmentos
-- 1 led rgb para el color del equipo
+- 2 motores
+- 1 led rgb para el color del equipo _trabajo futuro_
+
 - 1 led para encendido
-- 1 led para munición _trabajo futuro_
+- 1 led para munición 
+       - En la torreta para indicar al usuario que la bala está cargada
+
+- [N=4] -> N:
+    - receptores (dianas del láser)
+    - leds rojos (se apaga cuando han derribado ese punto débil) 
+  
 - 1 led para captura la bandera _trabajo futuro_
-- 1 driver motores
+- 1 driver motores L298N.
+- Portapilas _Darle una pensada a los voltios_
+- buzzer -> ¡Uo! del mainkra/melodía 8 bits
+- interruptor (on/off) [la idea es que no se encienda por el simple hecho de meter las pilas] 
+
+## Componentes (Idea)
+
 - linterna del chinese o algo así (a modo de foco para la cámara)
 
 ## Ideas extra
@@ -67,6 +78,28 @@ Maybe más fácil de transportar en 16 DIN A4.
 
 Bus autónomo dando vueltas a la EPS:
  - Siguiendo una línea alrededor de la EPS
+
+----------------------------
+
+Sonido:
+ - disparar
+
+ En la torreta para que se vea cuando puedes disparar.
+  - x1-> Led indicador si tienes bala cargada:
+(En la punta del cañón)
+       - Led amarillo en la torreta (encima): Bala cargada
+  
+ - recibir daño
+     - x4 -> rojo:
+         - encendido de normal
+         - apagado cuando han derribado ese punto débil
+  
+Retroceso:
+ - al disparar
+
+Leds La salud, 
+
+----------------------------
 
 ## Para el Futuro Wall-e ;)
 
