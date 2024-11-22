@@ -1,33 +1,37 @@
 # TankesLokos
 
-_No mordemos, sólo nos quemamos con los soldadores_
-
-Los componentes pueden ser 
+_No mordemos, sólo nos quemamos con los soldadores_ 
 
 ## Componentes (Idea)
 
-- Arduino UNO c/ESP32
+- Arduino UNO c/ESP32 - Wemos Arduino UNO con ESP32- _Mirar otros modelos -> buscar alternativas_ (igual es más barata/mejor)
 - Un servomotor de 180º para la torreta
-- 2 motores
-- 1 led rgb para el color del equipo _trabajo futuro_
+- 2 motores -> Gebildet 8pcs DC3V-12V Motorreductor DC
+                -> Pending seguir mirando:
+                       https://www.amazon.es/Gebildet-Motorreductor-Tracci%C3%B3n-Rob%C3%B3tico-Juguetes/dp/B07Z4PYJY4
+
+- FABADA: Leds pueden ser RGB
 
 - 1 led para encendido
 - 1 led para munición 
        - En la torreta para indicar al usuario que la bala está cargada
 
+- 1 Emisor láser
 - [N=4] -> N:
     - receptores (dianas del láser)
     - leds rojos (se apaga cuando han derribado ese punto débil) 
   
-- 1 led para captura la bandera _trabajo futuro_
 - 1 driver motores L298N.
 - Portapilas _Darle una pensada a los voltios_
 - buzzer -> ¡Uo! del mainkra/melodía 8 bits
-- interruptor (on/off) [la idea es que no se encienda por el simple hecho de meter las pilas] 
+- interruptor (on/off) [la idea es que no se encienda por el simple hecho de meter las pilas]
+- Mando bluetooth
+ 
 
 ## Componentes (Idea)
 
 - linterna del chinese o algo así (a modo de foco para la cámara)
+- 1 led para captura la bandera _trabajo futuro_
 
 ## Ideas extra
 
@@ -40,18 +44,17 @@ Los componentes pueden ser
 - Faros en los tanques? (Estética)
  - Quizá pueda afectar a la luz infrarroja (Laser Tag)
  - Quizá sea estético
- - Quizá ayude con el reconocimiento del qr
 
 
 ## Otras consideraciones
 
 Los robots son clientes y un ordenador es el server central.
 
-MicroPython/Python + OpenCV
+MicroPython/Python
 
 Hacemos una red local y conectamos un ordenador y todos los robots a ella. Los robots le envían al ordenador los datos y el ordenador corre en la red local un server sencillito con una base de datos.
 
-Decidir entre reconocimiento QR y Laser Tag
+Laser Tag
 
 Mirar cómo funciona laser tag. Para distinguir las emisiones de cada tanque.
 
