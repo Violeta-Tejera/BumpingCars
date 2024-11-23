@@ -4,7 +4,7 @@ _No mordemos, sólo nos quemamos con los soldadores_
 
 ## Componentes (Idea)
 
-- Arduino UNO c/ESP32 - Wemos Arduino UNO con ESP32- _Mirar otros modelos -> buscar alternativas_ (igual es más barata/mejor)
+- Arduino UNO c/ESP32 - **WeMos D1 ESP32 WROOM WiFi** - _Mirar otros modelos -> buscar alternativas_ (igual es más barata/mejor)
 - Un servomotor de 180º para la torreta
 - 2 motores -> Gebildet 8pcs DC3V-12V Motorreductor DC
                 -> Pending seguir mirando:
@@ -24,7 +24,7 @@ _No mordemos, sólo nos quemamos con los soldadores_
 - 1 driver motores L298N.
 - Portapilas _Darle una pensada a los voltios_
 - buzzer -> ¡Uo! del mainkra/melodía 8 bits
-- interruptor (on/off) [la idea es que no se encienda por el simple hecho de meter las pilas]
+- interruptor (on/off) [la idea es que **NO** se encienda por el simple hecho de meter las pilas]
 - Mando bluetooth
  
 
@@ -112,6 +112,30 @@ Cámara super chetada para Computer Vision
 
 https://openmv.io/
 
+## No tan importante
+
+No he encontrado el GameSir **G**3s pero he encontrado este que es de la misma marca y a un precio asequible:
+[GameSir **T**3s](https://es.aliexpress.com/item/1005007038130995.html?spm=a2g0o.productlist.main.1.1d27FrMRFrMRgV&algo_pvid=b3bc0426-7b90-4c2f-83f4-332a1c6af81f&algo_exp_id=b3bc0426-7b90-4c2f-83f4-332a1c6af81f-0&pdp_npi=4%40dis%21EUR%2144.40%2115.85%21%21%21329.41%21117.58%21%40211b612817323869328777304ecb59%2112000039179975857%21sea%21ES%210%21ABX&curPageLogUid=IlovW96HRhiG&utparam-url=scene%3Asearch%7Cquery_from%3A)
+
+⚠️ No garantizo que también funcione este con la placa (Asumiendo que funciona con el Gamesir G3s) ⚠️
+*La placa "**WeMos D1 ESP32 WROOM WiFi **"
+
+Problema que veo de primeras es que sé que el ESP32 y el G3s soportan bluetooth por debajo de 5.0 pero este ni idea. Parece que hay retrocompatibilidad tras una búsqueda rápida en Google. Pending investigar + sobre el tema.
+
+### Datasheets
+
+### Mandos
+
+#### [G3s](https://www.mijoya.com.mx/images/GameSir%20G3s%20USER%20Mannual%20FINAL%2020161101.pdf)
+#### [T3s](https://cdn.shopify.com/s/files/1/2241/8433/files/GameSir-T3s.pdf?v=1654507846) (Las instrucciones, que no he encontrado la datasheet 😅)
+
+### Placas
+
+#### [ESP 32](https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf)
+#### [Repo arduino-esp32](https://github.com/espressif/arduino-esp32): tiene bastantes referencias
+
 ## Importante
 
 Diseño que tiene las ruedas por eslabones: https://www.thingiverse.com/thing:467807
+
+At the moment las pruebas se están haciendo con la placa: **WeMos D1 ESP32 WROOM WiFi**
