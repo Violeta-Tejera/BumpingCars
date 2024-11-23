@@ -111,3 +111,7 @@ Cámara super chetada para Computer Vision
 (Este link me lo pasó Javi OSHWDem, el que quedó segundo en laberinto)
 
 https://openmv.io/
+
+## Importante
+
+Diseño que tiene las ruedas por eslabones: https://www.thingiverse.com/thing:467807
