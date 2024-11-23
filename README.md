@@ -118,7 +118,7 @@ No he encontrado el GameSir **G**3s pero he encontrado este que es de la misma m
 [GameSir **T**3s](https://es.aliexpress.com/item/1005007038130995.html?spm=a2g0o.productlist.main.1.1d27FrMRFrMRgV&algo_pvid=b3bc0426-7b90-4c2f-83f4-332a1c6af81f&algo_exp_id=b3bc0426-7b90-4c2f-83f4-332a1c6af81f-0&pdp_npi=4%40dis%21EUR%2144.40%2115.85%21%21%21329.41%21117.58%21%40211b612817323869328777304ecb59%2112000039179975857%21sea%21ES%210%21ABX&curPageLogUid=IlovW96HRhiG&utparam-url=scene%3Asearch%7Cquery_from%3A)
 
 ⚠️ No garantizo que también funcione este con la placa (Asumiendo que funciona con el Gamesir G3s) ⚠️
-*La placa "**WeMos D1 ESP32 WROOM WiFi **"
+*La placa "**WeMos D1 ESP32 WROOM WiFi**"
 
 Problema que veo de primeras es que sé que el ESP32 y el G3s soportan bluetooth por debajo de 5.0 pero este ni idea. Parece que hay retrocompatibilidad tras una búsqueda rápida en Google. Pending investigar + sobre el tema.
 
