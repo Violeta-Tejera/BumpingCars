@@ -22,6 +22,8 @@ _No mordemos, sólo nos quemamos con los soldadores_
     - leds rojos (se apaga cuando han derribado ese punto débil) 
   
 - 1 driver motores L298N.
+    - [Individual](https://www.turibot.es/controlador-motor-dc-l298n-para-arduino)
+    - [Pack x4 Amazon](https://www.amazon.es/ARCELI-Controlador-variador-Stepper-Arduino/dp/B07MY33PC9?dib=eyJ2IjoiMSJ9.1Pqr5FIGy49xNGxbDUvktiQOVxERerLiUffyv2rlwHO8aoQZ3n2i-92MbEWXNYSDDRwKrzmFyOL5AzZhS15uAoj82W3CMNQiFaU_DyXhNOzLivKcNRv-co6Hao--9Bg9dSFeQFxFkn8GZPv2KubTL9jvpMdVaWaePsnGPbXG1EWF_86zVLqlKsH7w8w3yp3R5GqRC2c0Ls22-I9qWlSrvzz74xfuXb2PAqpvxlZEkkXqEZQS3a5-Y77Hj_fMp9O9Rclqpx4WILb5sgVmEUiAIMrcLhTsrJS6jlddSyt2jIw.ld2zAIP1A292itbP4Ndo8JmURbt4pbZyuhY_jKpr0lk&dib_tag=se&keywords=l298n&nsdOptOutParam=true&qid=1732475964&sr=8-6)
 - Portapilas _Darle una pensada a los voltios_
 - buzzer -> ¡Uo! del mainkra/melodía 8 bits
 - interruptor (on/off) [la idea es que **NO** se encienda por el simple hecho de meter las pilas]
