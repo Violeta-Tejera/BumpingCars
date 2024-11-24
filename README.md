@@ -126,8 +126,8 @@ Bajarse este [bin](https://micropython.org/resources/firmware/ESP32_GENERIC-2024
 
 En la misma ruta donde está instalado el .bin Y CON LA PLACA CONECTADA AL PC!!!:
 
-- esptool.py --chip esp32 --port /dev/ttyUSB0 erase_flash
-- esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash -z 0x1000 ESP32_GENERIC-20241025-v1.24.0.bin
+- _esptool.py --chip esp32 --port /dev/ttyUSB0 erase_flash_
+- _esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash -z 0x1000 ESP32_GENERIC-20241025-v1.24.0.bin_
 
 ## No tan importante
 
