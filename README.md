@@ -147,6 +147,14 @@ La ventaja es que no hay que realizar pasos adicionales de configuración en el 
 
 Permítanme añadir que me sorprende lo _straightforward_ que es 😜 !!!
 
+*Observaciones:
+  - Si por lo que sea os da por mover ficheros de sitio o cambiar el nombre de la ruta donde se encuentra el proyecto, el IDE es tan simple que sencillamente explota 💥 y no deja abrir el proyecto. No tiene digamos un apartado de File -> Open...
+      Solución:
+        Si estáis en Linux 🐧, este comando me ha salvado la vida:
+            _rm -rf ~/.config/Arduino Lab for MicroPython/Local Storage_
+
+        Esto hará que la próxima vez que se abra te pregunte por la ubicación del directorio que quieras abrir.
+
 ## No tan importante
 
 No he encontrado el GameSir **G**3s pero he encontrado este que es de la misma marca y a un precio asequible:
