@@ -6,7 +6,7 @@ _No mordemos, sólo nos quemamos con los soldadores_
 
 - Arduino UNO c/ESP32 - **WeMos D1 ESP32 WROOM WiFi** - _Mirar otros modelos -> buscar alternativas_ (igual es más barata/mejor)
 - Un servomotor de 180º para la torreta
-- 2 motores -> Gebildet 8pcs DC3V-12V Motorreductor DC
+- 2 motores -> **Gebildet 8pcs DC3V-12V Motorreductor DC**
                 -> Pending seguir mirando:
                        https://www.amazon.es/Gebildet-Motorreductor-Tracci%C3%B3n-Rob%C3%B3tico-Juguetes/dp/B07Z4PYJY4
 
@@ -111,6 +111,23 @@ Cámara super chetada para Computer Vision
 (Este link me lo pasó Javi OSHWDem, el que quedó segundo en laberinto)
 
 https://openmv.io/
+
+## Parte del SetUp
+
+Link de culto de [MicroPython](https://dancruzmx.medium.com/micropython-en-una-wemos-esp32-d1-r32-e6078150a1a8) para nuestra placa
+
+*IMPORTANTE: en el apartado de Instalación del FirmWare 
+
+con esptool instalado (pip install esptool)
+
+pone 2 comandos a continuación pero a mí me han funcionado los de la documentación oficial referenciada de MicroPython (son parecidos)
+
+Bajarse este [bin](https://micropython.org/resources/firmware/ESP32_GENERIC-20241025-v1.24.0.bin) para el ESP 32
+
+En la misma ruta donde está instalado el .bin Y CON LA PLACA CONECTADA AL PC!!!:
+
+- esptool.py --chip esp32 --port /dev/ttyUSB0 erase_flash
+- esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash -z 0x1000 ESP32_GENERIC-20241025-v1.24.0.bin
 
 ## No tan importante
 
