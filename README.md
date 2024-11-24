@@ -152,8 +152,11 @@ Permítanme añadir que me sorprende lo _straightforward_ que es 😜 !!!
       Solución:
         Si estáis en Linux 🐧, este comando me ha salvado la vida:
             _rm -rf "~/.config/Arduino Lab for MicroPython/Local Storage"_
-
   Esto hará que la próxima vez que se abra te pregunte por la ubicación del directorio que quieras abrir.
+  
+  - Mencionar también que el explorador de archivos del IDE es bastante limitado. Es un poco complicado mover archivos entre directorios sin desesperarse. Dos maneras:
+       - Desde el explorador de archivos del PC
+       - Pasándolo al ESP/PC, entrando en el directorio en cuestión y mandar el archivo de vuelta desde el ESP/PC.
 
 ## No tan importante
 
