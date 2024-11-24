@@ -139,9 +139,7 @@ _Ignoren la parte de PRUEBAS del artículo ;)_
 
 Lo suyo sería trabajar con el IDE de Arduino pero no he conseguido crear el entorno de MicroPython deseado. No he encontrado forma de instalar plugins de MicroPyton ni nada por el estilo. Si la hay, es que me he rendido antes 😅.
 
-Sin embargo he encontrado otro (también de Arduino) enfocado en MicroPython llamado [Arduino Lab For MicorPython](https://labs.arduino.cc/en/labs/micropython).
-
-Este Link lleva a una página de descargas para descargar el IDE en fucnión del SO con el que se esté trabajando. Linux en mi caso 😈
+Sin embargo he encontrado otro (también de Arduino) enfocado en MicroPython llamado [Arduino Lab For MicorPython](https://labs.arduino.cc/en/labs/micropython). Este Link lleva a una página de descargas para descargar el IDE en fucnión del SO con el que se esté trabajando. Linux en mi caso 😈
 
 La ventaja es que, si hemos seguido los pasos del [apartado anterior](#mp_placa) no hay que realizar pasos adicionales de configuración en el propio IDE a diferencia del IDE de Arduino convenvional. En otras palabras, tras conectar la placa al ordenador ya tenemos MicroPython Ready To Go 😎 !!!
 
