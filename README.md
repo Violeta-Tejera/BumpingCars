@@ -133,6 +133,8 @@ En la misma ruta donde está instalado el .bin Y CON LA PLACA CONECTADA AL PC!!!
 - _esptool.py --chip esp32 --port /dev/ttyUSB0 erase_flash_
 - _esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash -z 0x1000 ESP32_GENERIC-20241025-v1.24.0.bin_
 
+**IGNOREN LA PARTE DE PRUEBAS ;)**
+
 ### MicroPython IDE
 
 Lo suyo sería trabajar con el IDE de Arduino pero no he conseguido crear el entorno de MicroPython deseado. No he encontrado forma de instalar plugins de MicroPyton ni nada por el estilo. Si la hay, es que me he rendido antes 😅.
