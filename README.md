@@ -114,7 +114,7 @@ https://openmv.io/
 
 ## Parte del SetUp
 
-### MicroPython en la placa
+### <a name="mp_placa">MicroPython en la placa
 
 Link de culto de [MicroPython](https://dancruzmx.medium.com/micropython-en-una-wemos-esp32-d1-r32-e6078150a1a8) para nuestra placa
 
@@ -124,7 +124,9 @@ con esptool instalado (pip install esptool)
 
 pone 2 comandos a continuación pero a mí me han funcionado los de la documentación oficial referenciada de MicroPython (son parecidos)
 
-Bajarse este [bin](https://micropython.org/resources/firmware/ESP32_GENERIC-20241025-v1.24.0.bin) para el ESP 32
+Bajarse este [bin](https://micropython.org/resources/firmware/ESP32_GENERIC-20241025-v1.24.0.bin) para el ESP32
+
+(si se trabaja en Windows seguir los comandos del arículo ;)
 
 En la misma ruta donde está instalado el .bin Y CON LA PLACA CONECTADA AL PC!!!:
 
@@ -133,13 +135,15 @@ En la misma ruta donde está instalado el .bin Y CON LA PLACA CONECTADA AL PC!!!
 
 ### MicroPython IDE
 
-Lo suyo sería trabajar con el IDE de arduino pero no he conseguido crear el entorno de MicroPython deseado. No he encontrado forma de instalar plugins de MicroPyton ni nada por el estilo.
+Lo suyo sería trabajar con el IDE de Arduino pero no he conseguido crear el entorno de MicroPython deseado. No he encontrado forma de instalar plugins de MicroPyton ni nada por el estilo. Si la hay, es que me he rendido antes 😅.
 
 Sin embargo he encontrado otro (también de Arduino) enfocado en MicroPython llamado [Arduino Lab For MicorPython](https://labs.arduino.cc/en/labs/micropython).
 
-Este Link lleva a una página de descargas para descargar el IDE en fucnión del SO con el que se esté trabajando.
+Este Link lleva a una página de descargas para descargar el IDE en fucnión del SO con el que se esté trabajando. Linux en mi caso 😈
 
-La ventaja es que, si hemos seguido los pasos del [apartado anterior](#MicroPython en la placa)
+La ventaja es que, si hemos seguido los pasos del [apartado anterior](#mp_placa) no hay que realizar pasos adicionales de configuración en el propio IDE a diferencia del IDE de Arduino convenvional. Tiene una interfaz bastante simple e intuitiva.
+
+Permítanme añadir que me sorprende lo _straightforward_ que es 😜 !!!
 
 ## No tan importante
 
