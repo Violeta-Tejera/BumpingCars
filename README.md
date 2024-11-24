@@ -114,6 +114,8 @@ https://openmv.io/
 
 ## Parte del SetUp
 
+### MicroPython en la placa
+
 Link de culto de [MicroPython](https://dancruzmx.medium.com/micropython-en-una-wemos-esp32-d1-r32-e6078150a1a8) para nuestra placa
 
 *IMPORTANTE: en el apartado de Instalación del FirmWare 
@@ -128,6 +130,16 @@ En la misma ruta donde está instalado el .bin Y CON LA PLACA CONECTADA AL PC!!!
 
 - _esptool.py --chip esp32 --port /dev/ttyUSB0 erase_flash_
 - _esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash -z 0x1000 ESP32_GENERIC-20241025-v1.24.0.bin_
+
+### MicroPython IDE
+
+Lo suyo sería trabajar con el IDE de arduino pero no he conseguido crear el entorno de MicroPython deseado. No he encontrado forma de instalar plugins de MicroPyton ni nada por el estilo.
+
+Sin embargo he encontrado otro (también de Arduino) enfocado en MicroPython llamado [Arduino Lab For MicorPython](https://labs.arduino.cc/en/labs/micropython).
+
+Este Link lleva a una página de descargas para descargar el IDE en fucnión del SO con el que se esté trabajando.
+
+La ventaja es que, si hemos seguido los pasos del [apartado anterior](#MicroPython en la placa)
 
 ## No tan importante
 
