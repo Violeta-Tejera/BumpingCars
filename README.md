@@ -151,11 +151,11 @@ Permítanme añadir que me sorprende lo _straightforward_ que es 😜 !!!
   - Si por lo que sea os da por mover ficheros de sitio o cambiar el nombre de la ruta donde se encuentra el proyecto, el IDE es tan simple que sencillamente explota 💥 y no deja abrir el proyecto. No tiene digamos un apartado de File -> Open...
       Solución:
         Si estáis en Linux 🐧, este comando me ha salvado la vida:
-            _rm -rf "~/.config/Arduino Lab for MicroPython/Local Storage"_
+            **_rm -rf "~/.config/Arduino Lab for MicroPython/Local Storage"_** (yo me he hecho un alias porque es un comando muy recurrente 😂)
   Esto hará que la próxima vez que se abra te pregunte por la ubicación del directorio que quieras abrir.
   
   - Mencionar también que el explorador de archivos del IDE es bastante limitado. Es un poco complicado mover archivos entre directorios sin desesperarse. Dos maneras:
-       - Desde el explorador de archivos del PC (**Recomendable**)
+       - Desde el explorador de archivos del PC (**Muy Recomendable**)
        - Pasándolo al ESP/PC, entrando en el directorio en cuestión y mandar el archivo de vuelta desde el **ESP**/_PC_ (al **PC**/_ESP_). Importante que no se trata de transferencias sino de copias, por lo que habrá que eliminar a mano las copias intermedias.
 
 ## No tan importante
