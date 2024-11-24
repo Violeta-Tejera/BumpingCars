@@ -193,13 +193,21 @@ Problema que veo de primeras es que sé que el ESP32 y el G3s soportan bluetooth
 
 ##### UP ↑
 
-`cd WebApp`
-`docker compose up -d`
+```bash
+cd WebApp
+```
+``` bash
+docker compose up -d
+```
 
 ##### DOWN ↓
 
-`cd WebApp`
-`docker compose down`
+```bash
+cd WebApp
+```
+```bash
+docker compose down
+```
 
 
 ## Importante
