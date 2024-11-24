@@ -124,7 +124,8 @@ con esptool instalado (pip install esptool)
 
 pone 2 comandos a continuación pero a mí me han funcionado los de la documentación oficial referenciada de MicroPython (son parecidos)
 
-Bajarse este [bin](https://micropython.org/resources/firmware/ESP32_GENERIC-20241025-v1.24.0.bin) para el ESP32
+Bajarse este [bin](https://micropython.org/resources/firmware/ESP32_GENERIC-20241025-v1.24.0.bin) para el ESP32 (v1.24.0)
+(Proviene de este [enlace](https://micropython.org/download/ESP32_GENERIC/) por si queda desactualizado ;)
 
 (si se trabaja en Windows seguir los comandos del arículo ;)
 
