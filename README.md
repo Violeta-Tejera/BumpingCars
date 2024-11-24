@@ -126,7 +126,7 @@ pone 2 comandos a continuación pero a mí me han funcionado los de la documenta
 
 Bajarse este [bin](https://micropython.org/resources/firmware/ESP32_GENERIC-20241025-v1.24.0.bin) para el ESP32 (v1.24.0)
 
-(Proviene de este [enlace](https://micropython.org/download/ESP32_GENERIC/) por si queda desactualizado ;)
+(Proviene de este [enlace](https://micropython.org/download/ESP32_GENERIC/) por si queda desactualizado. Y en ese caso modificar el nombre del .bin en el segundo comando ;)
 
 (si se trabaja en Windows seguir los comandos del arículo ;)
 
