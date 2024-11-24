@@ -155,7 +155,7 @@ Permítanme añadir que me sorprende lo _straightforward_ que es 😜 !!!
   Esto hará que la próxima vez que se abra te pregunte por la ubicación del directorio que quieras abrir.
   
   - Mencionar también que el explorador de archivos del IDE es bastante limitado. Es un poco complicado mover archivos entre directorios sin desesperarse. Dos maneras:
-       - Desde el explorador de archivos del PC
+       - Desde el explorador de archivos del PC **ULTRARRECOMENTABLE**!!!
        - Pasándolo al ESP/PC, entrando en el directorio en cuestión y mandar el archivo de vuelta desde el **ESP**/_PC_ (al **PC**/_ESP_). Importante que no se trata de transferencias sino de copias, por lo que habrá que eliminar a mano las copias intermedias.
 
 ## No tan importante
