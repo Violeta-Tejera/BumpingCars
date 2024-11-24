@@ -183,6 +183,25 @@ Problema que veo de primeras es que sé que el ESP32 y el G3s soportan bluetooth
 #### [ESP 32](https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf)
 #### [Repo arduino-esp32](https://github.com/espressif/arduino-esp32): tiene bastantes referencias
 
+### WebApp
+
+#### Ports
+##### Frontend -> 6006
+##### Baackend -> 7007
+
+#### Deployment
+
+##### UP ↑
+
+`cd WebApp`
+`docker compose up -d`
+
+##### DOWN ↓
+
+`cd WebApp`
+`docker compose down`
+
+
 ## Importante
 
 Diseño que tiene las ruedas por eslabones: https://www.thingiverse.com/thing:467807

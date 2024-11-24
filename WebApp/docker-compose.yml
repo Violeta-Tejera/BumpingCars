@@ -1,0 +1,17 @@
+services:
+  backend:
+    extends:
+      file: backend/docker-compose.yml
+      service: tl-backend-flask
+
+  frontend:
+    extends:
+      file: frontend/docker-compose.yml
+      service: tl-frontend-react
+    
+    # depends_on:
+    #   - backend
+    
+volumes:
+  tl-react_node_modules:
+    name: tl-react_node_modules
