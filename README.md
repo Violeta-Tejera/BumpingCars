@@ -218,3 +218,11 @@ At the moment las pruebas se están haciendo con la placa: **WeMos D1 ESP32 WROO
 
 Estudiar la App [Bluetooth Electronics
 ](https://play.google.com/store/apps/details?id=com.keuwl.arduinobluetooth&hl=fr)
+
+O cualquiera para "usar" de mando Android. 
+
+Micropython ESP32 (Wemos D1)
+
+Mirar tablet del taller (la del armario)
+
+Micropython -> ESP32 -> Android
