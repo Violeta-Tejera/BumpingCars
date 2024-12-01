@@ -216,4 +216,5 @@ Diseño que tiene las ruedas por eslabones: https://www.thingiverse.com/thing:46
 
 At the moment las pruebas se están haciendo con la placa: **WeMos D1 ESP32 WROOM WiFi**
 
-Estudiar la App [Bluetooth controller](https://play.google.com/store/apps/details?id=com.keuwl.arduinobluetooth&hl=fr)
+Estudiar la App [Bluetooth Electronics
+](https://play.google.com/store/apps/details?id=com.keuwl.arduinobluetooth&hl=fr)
