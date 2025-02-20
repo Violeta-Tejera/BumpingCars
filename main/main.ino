@@ -1,12 +1,25 @@
+#include <ESP32Servo.h>
 #include <Bluepad32.h>
+#include <OneWire.h>
+#include <DallasTemperature.h>
 
 // PIN CONNECTIONS
+// TODO: Usar "#define"
 int ENApin = 4;  // Motor 1 PWM
 int IN1pin = 13; // Motor 1 dirección
 int IN2pin = 26; // Motor 1 dirección
 int IN3pin = 14; // Motor 2 dirección
 int IN4pin = 27; // Motor 2 dirección
 int ENBpin = 5;  // Motor 2 PWM
+int servoPin = 19; // Pin servo
+int ledAmarillo = 18;
+int ledRojo = 2;
+int sensorPin = 16;
+int laserPin = 17;
+
+Servo servoCuello;
+OneWire oneWire(sensorPin);
+DallasTemperature sensors(&oneWire);
 
 ControllerPtr myControllers[BP32_MAX_GAMEPADS];
 
@@ -141,6 +154,39 @@ void processGamepad(ControllerPtr ctl) {
   }
 
     dumpGamepad(ctl);
+
+  //== TORRETA ==//
+  int L2_val = ctl->brake();
+  int R2_val = ctl->throttle();
+  int servoAngle = 90;
+
+  if(L2_val > 10){
+    servoAngle = map(L2_val, 0, 1023, 90, 0);
+    servoCuello.write(servoAngle);
+  }
+  if(R2_val > 10){
+    servoAngle = map(R2_val, 0, 1023, 90, 180);
+    servoCuello.write(servoAngle);
+  }
+
+
+  //== DISPARAR ==// 
+  sensors.requestTemperatures();
+  float temperature = sensors.getTempCByIndex(0);
+  
+  if(ctl->a()){
+    digitalWrite(ledAmarillo, LOW); // TODO: Lógica interna para el cooldown
+    digitalWrite(laserPin, HIGH);
+    delay(50);
+    digitalWrite(laserPin, LOW);
+  }
+
+  // TODO: Meterle más sensores y leds para la salud.
+  //== RECIBIR DISPARO ==//
+  if(temperature > 30){ // TODO: Lógica interna de la salud
+    digitalWrite(ledRojo, LOW);
+  }
+
 }
 
 void processControllers() {
@@ -164,6 +210,20 @@ void setup() {
   pinMode(IN3pin, OUTPUT);
   pinMode(IN4pin, OUTPUT);
   pinMode(ENBpin, OUTPUT);
+
+  pinMode(ledRojo, OUTPUT);
+  pinMode(ledAmarillo, OUTPUT);
+
+  digitalWrite(ledRojo, HIGH);
+  digitalWrite(ledAmarillo, HIGH);
+
+  pinMode(laserPin, OUTPUT);
+  digitalWrite(laserPin, LOW);
+
+  sensors.begin();
+
+  servoCuello.attach(servoPin);
+  servoCuello.write(90);
 
   Serial.begin(115200);
   Serial.printf("Firmware: %s\n", BP32.firmwareVersion());
@@ -196,6 +256,7 @@ void loop() {
   if (dataUpdated)
     processControllers();
 
+
   // The main loop must have some kind of "yield to lower priority task" event.
   // Otherwise, the watchdog will get triggered.
   // If your main loop doesn't have one, just add a simple `vTaskDelay(1)`.
@@ -203,5 +264,4 @@ void loop() {
   // https://stackoverflow.com/questions/66278271/task-watchdog-got-triggered-the-tasks-did-not-reset-the-watchdog-in-time
 
   //     vTaskDelay(1);
-  delay(150);
 }
