@@ -1,7 +1,4 @@
-#include <ESP32Servo.h>
 #include <Bluepad32.h>
-#include <OneWire.h>
-#include <DallasTemperature.h>
 
 // PIN CONNECTIONS
 // TODO: Usar "#define"
@@ -10,16 +7,13 @@ int IN1pin = 13; // Motor 1 dirección
 int IN2pin = 26; // Motor 1 dirección
 int IN3pin = 14; // Motor 2 dirección
 int IN4pin = 27; // Motor 2 dirección
-int ENBpin = 5;  // Motor 2 PWM
-int servoPin = 19; // Pin servo
-int ledAmarillo = 18;
-int ledRojo = 2;
-int sensorPin = 16;
-int laserPin = 17;
-
-Servo servoCuello;
-OneWire oneWire(sensorPin);
-DallasTemperature sensors(&oneWire);
+int ENBpin = 5;  // Motor 2 PWMW
+int servoPin = 25; // Pin servo
+const int ledPins[] = {16, 23, 17};
+const int numLeds = sizeof(ledPins) / sizeof(ledPins[0]); 
+const int bumperPins[] = {25, 12}; // LEFT and RIGHT
+int remainingLives = 3;
+bool bumperState = false;
 
 ControllerPtr myControllers[BP32_MAX_GAMEPADS];
 
@@ -94,97 +88,68 @@ void processGamepad(ControllerPtr ctl) {
   // By query each button individually:
   // a(), b(), x(), y(), l1(), etc...
  
-  //== LEFT JOYSTICK - UP ==//
-  if (ctl->axisY() <= -25) {
-    // map joystick values to motor speed
-    int motorSpeed = map(ctl->axisY(), -25, -508, 70, 255);
-    // move motors/robot forward
-    digitalWrite(IN1pin, HIGH);
-    digitalWrite(IN2pin, LOW);
-    analogWrite(ENApin, motorSpeed);
-    digitalWrite(IN3pin, HIGH);
-    digitalWrite(IN4pin, LOW);
-    analogWrite(ENBpin, motorSpeed);
-  }
+  if(remainingLives > 0){
+    //== LEFT JOYSTICK - UP ==//
+    if (ctl->axisY() <= -25) {
+      // map joystick values to motor speed
+      int motorSpeed = map(ctl->axisY(), -25, -508, 70, 255);
+      // move motors/robot forward
+      digitalWrite(IN1pin, HIGH);
+      digitalWrite(IN2pin, LOW);
+      analogWrite(ENApin, motorSpeed);
+      digitalWrite(IN3pin, LOW);
+      digitalWrite(IN4pin, HIGH);
+      analogWrite(ENBpin, motorSpeed);
+    }
 
-  //== LEFT JOYSTICK - DOWN ==//
-  if (ctl->axisY() >= 25) {
-    // map joystick values to motor speed
-    int motorSpeed = map(ctl->axisY(), 25, 512, 70, 255);
-    // move motors/robot in reverse
-    digitalWrite(IN1pin, LOW);
-    digitalWrite(IN2pin, HIGH);
-    analogWrite(ENApin, motorSpeed);
-    digitalWrite(IN3pin, LOW);
-    digitalWrite(IN4pin, HIGH);
-    analogWrite(ENBpin, motorSpeed);
-  }
+    //== LEFT JOYSTICK - DOWN ==//
+    if (ctl->axisY() >= 25) {
+      // map joystick values to motor speed
+      int motorSpeed = map(ctl->axisY(), 25, 512, 70, 255);
+      // move motors/robot in reverse
+      digitalWrite(IN1pin, LOW);
+      digitalWrite(IN2pin, HIGH);
+      analogWrite(ENApin, motorSpeed);
+      digitalWrite(IN3pin, HIGH);
+      digitalWrite(IN4pin, LOW);
+      analogWrite(ENBpin, motorSpeed);
+    }
 
-  //== RIGHT JOYSTICK - LEFT ==//
-  if (ctl->axisRX() <= -25) {
-    // map joystick values to motor speed
-    int motorSpeed = map(ctl->axisRX(), -25, -508, 70, 255);
-    // turn robot left - move right motor forward, keep left motor still
-    digitalWrite(IN1pin, LOW);
-    digitalWrite(IN2pin, HIGH);
-    analogWrite(ENApin, motorSpeed);
-    digitalWrite(IN3pin, HIGH);
-    digitalWrite(IN4pin, LOW);
-    analogWrite(ENBpin, motorSpeed);
-  }
+    //== RIGHT JOYSTICK - LEFT ==//
+    if (ctl->axisRX() <= -25) {
+      // map joystick values to motor speed
+      int motorSpeed = map(ctl->axisRX(), -25, -508, 70, 255);
+      // turn robot left - move right motor forward, keep left motor still
+      digitalWrite(IN1pin, HIGH);
+      digitalWrite(IN2pin, LOW);
+      analogWrite(ENApin, motorSpeed);
+      digitalWrite(IN3pin, HIGH);
+      digitalWrite(IN4pin, LOW);
+      analogWrite(ENBpin, motorSpeed);
+    }
 
-  //== RIGHT JOYSTICK - RIGHT ==//
-  if (ctl->axisRX() >= 25) {
-    // map joystick values to motor speed
-    int motorSpeed = map(ctl->axisRX(), 25, 512, 70, 255);
-    // turn robot right - move left motor forward, keep right motor still
-    digitalWrite(IN1pin, HIGH);
-    digitalWrite(IN2pin, LOW);
-    analogWrite(ENApin, motorSpeed);
-    digitalWrite(IN3pin, LOW);
-    digitalWrite(IN4pin, HIGH);
-    analogWrite(ENBpin, motorSpeed);
-  }
+    //== RIGHT JOYSTICK - RIGHT ==//
+    if (ctl->axisRX() >= 25) {
+      // map joystick values to motor speed
+      int motorSpeed = map(ctl->axisRX(), 25, 512, 70, 255);
+      // turn robot right - move left motor forward, keep right motor still
+      digitalWrite(IN1pin, LOW);
+      digitalWrite(IN2pin, HIGH);
+      analogWrite(ENApin, motorSpeed);
+      digitalWrite(IN3pin, LOW);
+      digitalWrite(IN4pin, HIGH);
+      analogWrite(ENBpin, motorSpeed);
+    }
 
-  //== LEFT JOYSTICK DEADZONE ==//
-  if (ctl->axisY() > -25 && ctl->axisY() < 25 && ctl->axisRX() > -25 && ctl->axisRX() < 25) {
-    // keep motors off
-    analogWrite(ENApin,0);
-    analogWrite(ENBpin, 0);
-  }
+    //== LEFT JOYSTICK DEADZONE ==//
+    if (ctl->axisY() > -25 && ctl->axisY() < 25 && ctl->axisRX() > -25 && ctl->axisRX() < 25) {
+      // keep motors off
+      analogWrite(ENApin,0);
+      analogWrite(ENBpin, 0);
+    }
 
-    dumpGamepad(ctl);
+      dumpGamepad(ctl);
 
-  //== TORRETA ==//
-  int L2_val = ctl->brake();
-  int R2_val = ctl->throttle();
-  int servoAngle = 90;
-
-  if(L2_val > 10){
-    servoAngle = map(L2_val, 0, 1023, 90, 0);
-    servoCuello.write(servoAngle);
-  }
-  if(R2_val > 10){
-    servoAngle = map(R2_val, 0, 1023, 90, 180);
-    servoCuello.write(servoAngle);
-  }
-
-
-  //== DISPARAR ==// 
-  sensors.requestTemperatures();
-  float temperature = sensors.getTempCByIndex(0);
-  
-  if(ctl->a()){
-    digitalWrite(ledAmarillo, LOW); // TODO: Lógica interna para el cooldown
-    digitalWrite(laserPin, HIGH);
-    delay(50);
-    digitalWrite(laserPin, LOW);
-  }
-
-  // TODO: Meterle más sensores y leds para la salud.
-  //== RECIBIR DISPARO ==//
-  if(temperature > 30){ // TODO: Lógica interna de la salud
-    digitalWrite(ledRojo, LOW);
   }
 
 }
@@ -202,6 +167,8 @@ void processControllers() {
   }
 }
 
+
+
 // Arduino setup function. Runs in CPU 1
 void setup() {
   pinMode(ENApin, OUTPUT);
@@ -211,19 +178,11 @@ void setup() {
   pinMode(IN4pin, OUTPUT);
   pinMode(ENBpin, OUTPUT);
 
-  pinMode(ledRojo, OUTPUT);
-  pinMode(ledAmarillo, OUTPUT);
+  for(int i = 0; i < numLeds; i++) pinMode(ledPins[i], OUTPUT);
+  for(int i = 0; i < numLeds; i++) digitalWrite(ledPins[i], HIGH);
 
-  digitalWrite(ledRojo, HIGH);
-  digitalWrite(ledAmarillo, HIGH);
-
-  pinMode(laserPin, OUTPUT);
-  digitalWrite(laserPin, LOW);
-
-  sensors.begin();
-
-  servoCuello.attach(servoPin);
-  servoCuello.write(90);
+  pinMode(bumperPins[0], INPUT_PULLUP);
+  pinMode(bumperPins[1], INPUT_PULLUP);
 
   Serial.begin(115200);
   Serial.printf("Firmware: %s\n", BP32.firmwareVersion());
@@ -252,11 +211,27 @@ void setup() {
 void loop() {
   // This call fetches all the controllers' data.
   // Call this function in your main loop.
+
   bool dataUpdated = BP32.update();
   if (dataUpdated)
     processControllers();
 
+    
+  if(remainingLives > 0){
+    if ((digitalRead(bumperPins[0]) == LOW || digitalRead(bumperPins[1]) == LOW) && !bumperState) {
+        digitalWrite(ledPins[remainingLives-1], LOW);
+        remainingLives--;
+        bumperState = true;
+    }else if(digitalRead(bumperPins[0]) == HIGH && digitalRead(bumperPins[1]) == HIGH){
+      bumperState = false;
+    }
+  }else{
+    for(int i = 0; i < numLeds; i++) digitalWrite(ledPins[i], LOW);
+    delay(1000);
+    for(int i = 0; i < numLeds; i++) digitalWrite(ledPins[i], HIGH);
+  }
 
+  delay(50); 
   // The main loop must have some kind of "yield to lower priority task" event.
   // Otherwise, the watchdog will get triggered.
   // If your main loop doesn't have one, just add a simple `vTaskDelay(1)`.
