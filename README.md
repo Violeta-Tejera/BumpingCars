@@ -8,7 +8,7 @@ The information displayed here is provided as is, you are using it at your own r
 
 The main purpose of this project is to develop a bumping car robot for the _I Jornadas del <a href="https://crm-uam.github.io/">Club de Robótica y Mecatrónica</a>_ and other events in which these robots may be used as a fun activity for the attendees.
 
-These robots are based on ESP32 and use bumpers to manage the bumping mechanic of the game, as well as an array of 3 leds to manage their health counters. The <a href="https://bluepad32.readthedocs.io/en/latest/">Bluepad32 library</a> has been used communicate both the robot and the controller. 
+These robots are based on ESP32 and use bumpers to manage the bumping mechanic of the game, as well as an array of 3 leds to manage their health counters. The <a href="https://bluepad32.readthedocs.io/en/latest/">Bluepad32 library</a> has been used communicate both the robot and the gamepad. 
 
 ## Components
 
@@ -26,6 +26,7 @@ Other:
 - Various wires
 - Soldering tin
 - Glue sticks
+- Gamepad (Check out The <a href="https://bluepad32.readthedocs.io/en/latest/supported_gamepads/">Bluepad32's supported gamepad list</a>
 
 A repurposed 3D parallelepiped was used as a fender for the the bumping cars, enabling the participants to use it to activate the bumpers in their opponent's robot.
 
