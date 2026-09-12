@@ -36,9 +36,12 @@ A repurposed 3D parallelepiped was used as a fender for the the bumping cars, en
 ![Components in the Robot](imgs/components.png)
 
 
-##### LED Array
+#### LED Array
 
-![Led Array](imgs/led_array.png)
+<p float="left">
+  <img src="imgs/led_array.png" width="500"/>
+  <img src="imgs/led_array.png" width="500"/> 
+</p>
 
 ## Algorithm 
 
