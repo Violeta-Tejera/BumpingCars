@@ -32,8 +32,6 @@ A repurposed 3D parallelepiped was used as a fender for the the bumping cars, en
 
 ### Circuit
 
-⚠️ Coming Soon! (After Summer holidays, but enjoy these figures in the meantime ☺️)
-
 ![Components in the Robot](imgs/components.png)
 
 #### LED Array
