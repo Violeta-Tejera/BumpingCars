@@ -12,9 +12,9 @@ These robots are based on ESP32 and use bumpers to manage the bumping mechanic o
 
 ## Components
 
-- WeMos D1 ESP32 WROOM WiFi
+- WeMos D1 ESP32 WROOM WiFi (It doesn't have to be this exact board; any ESP32 board with the required pins and Bluepad32 support will work)
 - L298n Motor Driver
-- DC Gear Motor with Tire Wheels. Gear rate 1:48. 240 rpm.
+- DC Gear Motor with Tire Wheels. Gear rate 1:48. 240 rpm. (I don't recommend going with wheels much faster than those, unless you want to have GTA 7 before 6 is released!)
 - 2 bumpers
 - 9V battery holder + battery (Connected to board)
 - 4 AA battery holder + 4 AA batteries (Connected to motor driver)
@@ -35,13 +35,18 @@ A repurposed 3D parallelepiped was used as a fender for the the bumping cars, en
 
 ![Components in the Robot](imgs/components.png)
 
-
 #### LED Array
 
-<p float="left">
-  <img src="imgs/led_array.png" width="500"/>
-  <img src="imgs/led_array.png" width="500"/> 
-</p>
+<table align="center">
+  <tr>
+    <td valign="middle">
+      <img src="imgs/led_array.png" width="500"/>
+    </td>
+    <td valign="middle">
+      <img src="imgs/led_circuit.png" width="500"/>
+    </td>
+  </tr>
+</table>
 
 ## Algorithm 
 
