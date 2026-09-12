@@ -26,7 +26,7 @@ Other:
 - Various wires
 - Soldering tin
 - Glue sticks
-- Gamepad (Check out The <a href="https://bluepad32.readthedocs.io/en/latest/supported_gamepads/">Bluepad32's supported gamepad list</a>
+- Gamepad (Check out The <a href="https://bluepad32.readthedocs.io/en/latest/supported_gamepads/">Bluepad32's supported gamepad list</a> for more info on this, although some knockoff versions of famous controllers worked out fine for me as well as OG versions)
 
 A repurposed 3D parallelepiped was used as a fender for the the bumping cars, enabling the participants to use it to activate the bumpers in their opponent's robot.
 
